@@ -1,7 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <amplify-authenticator>
+    <!-- username alias changes the Username field to say E-mail Address instead -->
+    <amplify-sign-in 
+      header-text="My Custom Sign In Text" 
+      slot="sign-in"
+      username-alias="email" 
+      ></amplify-sign-in>
+    <div>
+      <img alt="Vue logo" src="./assets/logo.png" />
+      <HelloWorld msg="Welcome to my auth app!" />
+      <div id="amplify-signout">
+        <amplify-sign-out></amplify-sign-out>
+      </div>
+    </div>      
+  </amplify-authenticator>
   </div>
 </template>
 
